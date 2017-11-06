@@ -1,0 +1,1165 @@
+
+
+<!DOCTYPE html>
+<html lang="es" dir="ltr" class="no-js" data-ffo-opensans="false" data-ffo-zillaslab="false">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8">
+
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <script>(function(d) { d.className = d.className.replace(/\bno-js/, ''); })(document.documentElement);</script>
+  
+    
+  
+
+  
+  <title>Usando las cajas flexibles CSS - CSS | MDN</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="index, follow">
+    <link rel="home" href="/es/">
+    <link rel="copyright" href="#copyright">
+  
+
+  
+    
+    
+
+    
+          <link href="https://cdn.mdn.mozilla.net/static/build/styles/mdn-skinny.71ab7b2b9bd3.css" rel="stylesheet" type="text/css" />
+      
+
+    
+  
+
+    
+        <link href="https://cdn.mdn.mozilla.net/static/build/styles/wiki-skinny.1a5ac0b9e47d.css" rel="stylesheet" type="text/css" />
+    
+
+
+    
+
+  <link href="https://cdn.mdn.mozilla.net/static/build/styles/locale-es.7e45c23d7d30.css" rel="stylesheet" type="text/css" />
+    <!-- common social tags -->
+    
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://cdn.mdn.mozilla.net/static/img/opengraph-logo.72382e605ce3.png">
+    <meta property="og:site_name" content="Mozilla Developer Network">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:image" content="https://cdn.mdn.mozilla.net/static/img/opengraph-logo.72382e605ce3.png">
+    <meta name="twitter:site" content="@MozDevNet">
+    <meta name="twitter:creator" content="@MozDevNet">
+    <link rel="search" type="application/opensearchdescription+xml" href="https://developer.mozilla.org/es/search/xml" title="Mozilla Developer Network">
+  
+
+  <!-- third-generation iPad with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://cdn.mdn.mozilla.net/static/img/favicon144.e7e21ca263ca.png">
+  <!-- iPhone with high-resolution Retina display: -->
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://cdn.mdn.mozilla.net/static/img/favicon114.d526f38b09c5.png">
+  <!-- first- and second-generation iPad: -->
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://cdn.mdn.mozilla.net/static/img/favicon72.cc65d1d762a0.png">
+  <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
+  <link rel="apple-touch-icon-precomposed" href="https://cdn.mdn.mozilla.net/static/img/favicon57.de33179910ae.png">
+  <!-- basic favicon -->
+  
+    
+  
+  <link rel="shortcut icon" href="https://cdn.mdn.mozilla.net/static/img/favicon32-local.329e8131018f.png">
+  <!--[if IE]>
+  <meta http-equiv="imagetoolbar" content="no">
+  <script type="text/javascript" src="https://cdn.mdn.mozilla.net/static/build/js/html5shiv.3948ccddab6f.js" charset="utf-8"></script>
+  <![endif]-->
+
+  <script type="text/javascript" src="https://cdn.mdn.mozilla.net/static/build/js/font-check.f6a4c7250869.js" charset="utf-8"></script>
+
+  
+  <link rel="dns-prefetch" href="https://interactive-examples.mdn.mozilla.net" pr="0.75" />
+  <link rel="preconnect" href="https://interactive-examples.mdn.mozilla.net" pr="0.75" />
+
+  <link rel="alternate" type="application/json" href="/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Usando_las_cajas_flexibles_CSS$json">
+  <link rel="canonical" href="https://developer.mozilla.org/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Usando_las_cajas_flexibles_CSS" >
+
+  
+    
+      <link rel="alternate" hreflang="en-US" href="/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" title="Using CSS Flexible Boxes">
+    
+      <link rel="alternate" hreflang="bn-BD" href="/bn-BD/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" title="Using CSS flexible boxes">
+    
+      <link rel="alternate" hreflang="ca" href="/ca/docs/Web/CSS/CSS_Flexible_Box_Layout/Utilitzar_model_flexible_caixes_CSS" title="Utilitzar el model de caixes flexible de CSS">
+    
+      <link rel="alternate" hreflang="de" href="/de/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" title="Using CSS flexible boxes">
+    
+      <link rel="alternate" hreflang="fr" href="/fr/docs/Web/CSS/Disposition_flexbox_CSS/Utilisation_des_flexbox_en_CSS" title="Utilisation de boîtes flexibles de CSS">
+    
+      <link rel="alternate" hreflang="it" href="/it/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" title="Using CSS flexible boxes">
+    
+      <link rel="alternate" hreflang="ja" href="/ja/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" title="CSS flexible box の利用">
+    
+      <link rel="alternate" hreflang="ko" href="/ko/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" title="Using CSS Flexible Boxes">
+    
+      <link rel="alternate" hreflang="pt-BR" href="/pt-BR/docs/CSS/Usando_caixas_flexiveis_css" title="Usando CSS flexible boxes (Caixas Flexíveis)">
+    
+      <link rel="alternate" hreflang="ru" href="/ru/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" title="Используем CSS Flexible Boxes">
+    
+      <link rel="alternate" hreflang="uk" href="/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" title="Використання CSS flexible-боксів">
+    
+      <link rel="alternate" hreflang="zh-CN" href="/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" title="使用 CSS 弹性盒子">
+    
+      <link rel="alternate" hreflang="zh-TW" href="/zh-TW/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" title="CSS彈性盒子用法">
+    
+  
+
+  <!-- document-specific social tags -->
+  <meta property="og:title" content="Usando las cajas flexibles CSS">
+  <meta property="og:url" content="https://developer.mozilla.org/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Usando_las_cajas_flexibles_CSS">
+  <meta name="twitter:url" content="https://developer.mozilla.org/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Usando_las_cajas_flexibles_CSS">
+  <meta name="twitter:title" content="Usando las cajas flexibles CSS">
+  
+  <meta property="og:description" content="La propiedad Flexible Box , o flexbox , de CSS3 es un modo de diseño que permite colocar los elementos de una página para que se comporten de forma predecible cuando el diseño de la página debe acomodarse a diferentes tamaños de pantalla y diferentes dispositivos. Para muchas aplicaciones, el modelo &#34;caja flexible&#34; produce una mejora sobre el modelo &#34;bloque&#34; porque no utiliza la propiedad float , ni hace que los márgenes del contenedor flexible interfieran con los márgenes de sus contenidos.">
+  <meta name="description" content="La propiedad Flexible Box , o flexbox , de CSS3 es un modo de diseño que permite colocar los elementos de una página para que se comporten de forma predecible cuando el diseño de la página debe acomodarse a diferentes tamaños de pantalla y diferentes dispositivos. Para muchas aplicaciones, el modelo &#34;caja flexible&#34; produce una mejora sobre el modelo &#34;bloque&#34; porque no utiliza la propiedad float , ni hace que los márgenes del contenedor flexible interfieran con los márgenes de sus contenidos.">
+  <meta name="twitter:description" content="La propiedad Flexible Box , o flexbox , de CSS3 es un modo de diseño que permite colocar los elementos de una página para que se comporten de forma predecible cuando el diseño de la página debe acomodarse a diferentes tamaños de pantalla y diferentes dispositivos. Para muchas aplicaciones, el modelo &#34;caja flexible&#34; produce una mejora sobre el modelo &#34;bloque&#34; porque no utiliza la propiedad float , ni hace que los márgenes del contenedor flexible interfieran con los márgenes de sus contenidos.">
+  
+
+
+  
+    
+
+<script type="text/javascript">
+
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-36116321-5', 'mozilla.org');
+    ga('set', 'anonymizeIp', true);
+
+    
+
+    // dimension9 == "Section editing"
+    
+        ga('set', 'dimension9', 'Enabled');
+    
+        // dimension12 == 'Page Revision'
+        ga('set', 'dimension12', '1161706');
+        // dimension17 == 'English Slug'
+        ga('set', 'dimension17', 'Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes');
+
+    (function() {
+        // http://cfsimplicity.com/61/removing-analytics-clutter-from-campaign-urls
+        var win = window;
+        var removeUtms = function(){
+            var location = win.location;
+            if (location.href.indexOf('utm') != -1 && win.history.replaceState) {
+                win.history.replaceState({}, '', location.pathname);
+            }
+        };
+
+        ga('send', 'pageview', {'hitCallback': removeUtms});
+    })();
+</script>
+
+  
+</head>
+<body data-slug="Web/CSS/CSS_Flexible_Box_Layout/Usando_las_cajas_flexibles_CSS" contextmenu="edit-history-menu" data-search-url="" class="document  ">
+
+  <script type="text/javascript">
+    // make sure global mdn object exists
+    var mdn = window.mdn || {};
+
+    (function(win) {
+        'use strict';
+
+        
+            (function(){
+  var FLAGS = {
+    'compat_api': false,'kumaediting': false,'line_length': false,'page_move': false,'redesign_beta': false,'redesign_live': false,'registration_disabled': false,'sample_frame': false,'search_suggestions': false,'section_edit': true,'sg_task_completion': false,'spam_admin_override': false,'spam_checks_enabled': true,'spam_spammer_override': false,'spam_submissions_enabled': false,'spam_testing_mode': false,'wiki_samples': true,'wiki_spam_exempted': false,'wiki_spam_training': false
+    },
+    SWITCHES = {
+    'wiki_error_on_delete': false,'wiki_force_immediate_rendering': false,'enable_optimizely': false,'welcome_email': true,'application_ACAO': true,'store_revision_ips': true,'dumb_doc_urls': true,'newsletter': true,'newsletter_article': true,'foundation_callout': false,'helpful-survey-2': true
+    },
+    SAMPLES = {
+    
+    };
+  window.waffle = {
+    "flag_is_active": function waffle_flag(flag_name) {
+      
+      return !!FLAGS[flag_name];
+    },
+    "switch_is_active": function waffle_switch(switch_name) {
+      
+      return !!SWITCHES[switch_name];
+    },
+    "sample_is_active": function waffle_sample(sample_name) {
+      
+      return !!SAMPLES[sample_name];
+    },
+    "FLAGS": FLAGS,
+    "SWITCHES": SWITCHES,
+    "SAMPLES": SAMPLES
+  };
+})();
+
+        
+
+        // This needs to be set before ckeditor.js loads
+        window.CKEDITOR_BASEPATH = '/static/js/libs/ckeditor/build/ckeditor/';
+
+        // Site configuration
+        win.mdn.ckeditor = {};
+        win.mdn.features = {};
+        win.mdn.staticPath = 'https://cdn.mdn.mozilla.net/static/';
+        win.mdn.optimizely = win['optimizely'] || [];
+        win.mdn.wiki = {
+            autosuggestTitleUrl: '/es/docs/get-documents'
+        };
+        win.mdn.assets = {
+            css: {
+                'editor-content': ['https://cdn.mdn.mozilla.net/static/build/styles/editor-content.2b64f60837e9.css','https://cdn.mdn.mozilla.net/static/build/styles/editor-locale-es.7e45c23d7d30.css',
+                ]
+            },
+            js: {
+                'syntax-prism': ['https://cdn.mdn.mozilla.net/static/build/js/syntax-prism.05dc5663d445.js',]
+            }
+        };
+
+        win.mdn.notifications = [];
+
+        
+
+        // interactive editor config
+        win.mdn.interactiveEditor = {
+            siteUrl: "https://developer.mozilla.org",
+            editorUrl: "https://interactive-examples.mdn.mozilla.net"
+        };
+
+    })(this);
+</script>
+    
+  <ul id="nav-access">
+    <li><a href="#document-main" id="skip-main">Saltar al contenido principal</a></li>
+    <li><a id="skip-language" href="#language">Seleccionar idioma</a></li>
+    <li><a href="#q" id="skip-search">Saltar a la búsqueda</a></li>
+  </ul>
+
+  <!-- Header -->
+  <header id="main-header"><div class="center">
+    <a href="/es/" class="logo">Documentación web de MDN</a>
+
+    <div id="nav-sec">
+    
+      <ul>
+      <li class="nav-login"><div class="login">
+    
+        
+        <a href="/users/github/login/?next=%2Fes%2Fdocs%2FWeb%2FCSS%2FCSS_Flexible_Box_Layout%2FUsando_las_cajas_flexibles_CSS" class="login-link js-login-link" data-service="GitHub">
+            Registrarse
+            <i class="icon-github" aria-hidden="true"></i>
+        </a>
+    
+</div></li>
+      </ul>
+    
+    </div>
+
+    <nav id="main-nav" class="nav-main" role="navigation"><ul><li class="nav-main-item"><a href="/es/docs/Web">Tecnologías<i aria-hidden="true" class="icon-caret-down"></i></a>
+      <div class="submenu js-submenu" id="nav-tech-submenu">
+        <div class="submenu-column">
+          <ul>
+            <li><a href="/es/docs/Web/HTML">HTML</a></li>
+            <li><a href="/es/docs/Web/CSS">CSS</a></li>
+            <li><a href="/es/docs/Web/JavaScript">JavaScript</a></li>
+            <li><a href="/es/docs/Web/Guide/Graphics">Gráficos</a></li>
+            <li><a href="/es/docs/Web/HTTP">HTTP</a></li>
+            <li><a href="/es/docs/Web/API">API / DOM</a></li>
+            <li><a href="/es/docs/Mozilla/Add-ons/WebExtensions">Extensiones de navegador</a></li>
+            <li><a href="/es/docs/Web/MathML">MathML</a></li>
+          </ul>
+        </div></div><li class="nav-main-item"><a href="/es/docs/Learn">Referencias y guías<i aria-hidden="true" class="icon-caret-down"></i></a>
+        <div class="submenu js-submenu" id="nav-learn-submenu">
+        <div class="submenu-column">
+          <ul>
+            <li><a href="/es/docs/Learn">Aprender desarrollo web</a></li>
+            <li><a href="/es/docs/Web/Tutorials">Tutoriales</a></li>
+            <li><a href="/es/docs/Web/Reference">Referencias</a></li>
+            <li><a href="/es/docs/Web/Guide">Guías para desarrolladores</a></li>
+            <li><a href="/es/docs/Web/Accessibility">Accesibilidad</a></li>
+            <li><a href="/es/docs/Games">Desarrollo de juegos</a></li>
+            <li><a href="/es/docs/Web">...más documentos</a></li>
+          </ul>
+        </div>
+      </div>
+      </li><li class="nav-main-item"><a href="/es/docs/MDN/Feedback">Comentarios<i aria-hidden="true" class="icon-caret-down"></i></a>
+        <div class="submenu js-submenu" id="nav-contact-submenu">
+          <div class="submenu-column">
+            <ul>
+              <li><a href="https://support.mozilla.org/">Obtén ayuda de Firefox<i aria-hidden="true" class="icon-external-link"></i></a></li>
+              <li><a href="https://stackoverflow.com/">Obtén ayuda de desarrollo web<i aria-hidden="true" class="icon-external-link"></i></a></li>
+            </ul>
+            <ul>
+              <li><a href="/es/docs/MDN/Community">Únete a la comunidad de MDN</a></li>
+              <li><a target="_blank" href="https://bugzilla.mozilla.org/form.doc?bug_file_loc=https%3A//developer.mozilla.org/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Usando_las_cajas_flexibles_CSS">Denuncia un problema de contenido<i aria-hidden="true" class="icon-external-link"></i></a></li>
+              <li><a target="_blank" href="https://bugzilla.mozilla.org/form.mdn">Informar de un error. <i aria-hidden="true" class="icon-external-link"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </li><li class="nav-main-search"><form action="/es/search" method="get" role="search">
+        <div class="search-wrap">
+          <label for="main-q" class="offscreen">Buscar</label>
+          <input type="search" id="main-q" name="q" placeholder="Buscar" data-value="" value="" />
+          <span class="search-trigger"><i aria-hidden="true" class="icon-search"></i></span>
+          <button type="submit" class="offscreen">Buscar</button>
+        </div>
+      </form></li></ul></nav>
+  </div></header> 
+
+  <!-- Content will go here -->
+  <main id="content">
+      
+  <!-- heading -->
+  <div id="wiki-document-head" class="document-head">
+    <div class="center">
+      
+        <!-- crumbs -->
+        
+  <nav class="crumbs" role="navigation"><ol xmlns:v="http://rdf.data-vocabulary.org/#" aria-label="hilos de araña">
+    <li typeof="v:Breadcrumb"><a href="/es" rel="v:url" property="v:title">MDN</a></li>
+    
+      <li class="crumb" typeof="v:Breadcrumb"><a href="/es/docs/Web" rel="v:url" property="v:title">Tecnología Web para desarrolladores</a></li>
+    
+      <li class="crumb" typeof="v:Breadcrumb"><a href="/es/docs/Web/CSS" rel="v:url" property="v:title">CSS</a></li>
+    
+      <li class="crumb" typeof="v:Breadcrumb"><a href="/es/docs/Web/CSS/CSS_Flexible_Box_Layout" rel="v:url" property="v:title">CSS Flexible Box Layout</a></li>
+    
+    <li class="crumb" typeof="v:Breadcrumb" property="v:title">Usando las cajas flexibles CSS</li>
+  </ol></nav>
+      
+
+      <!-- action buttons -->
+      <div class="document-actions">
+        
+
+  
+    
+    
+  
+
+  
+    
+  
+
+  
+
+  <ul class="page-buttons">
+      <li><button id="languages-menu" class="transparent" aria-haspopup="true" aria-owns="languages-menu-submenu" aria-expanded="false"><span>Idiomas</span><i aria-hidden="true" class="icon-language"></i></button>
+
+        <div class="submenu js-submenu" id="languages-menu-submenu">
+          <div class="submenu-column">
+            <ul id="translations">
+              
+                
+                
+                
+                  <li><bdi><a rel="internal" href="/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" title="Inglés (EE.UU.)">English (US) (en-US)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/bn-BD/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" title="Bengalí (Bangladesh)">বাংলা (বাংলাদেশ) (bn-BD)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/ca/docs/Web/CSS/CSS_Flexible_Box_Layout/Utilitzar_model_flexible_caixes_CSS" title="Catalán">Català (ca)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/de/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" title="Alemán">Deutsch (de)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/fr/docs/Web/CSS/Disposition_flexbox_CSS/Utilisation_des_flexbox_en_CSS" title="Francés">Français (fr)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/it/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" title="Italiano">Italiano (it)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/ja/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" title="Japonés">日本語 (ja)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/ko/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" title="Coreano">한국어 (ko)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/pt-BR/docs/CSS/Usando_caixas_flexiveis_css" title="Portugués (Brasil)">Português (do Brasil) (pt-BR)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/ru/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" title="Ruso">Русский (ru)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" title="Ucraniano">Українська (uk)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" title="Chino (simplificado)">中文 (简体) (zh-CN)</a></bdi></li>
+                
+                  <li><bdi><a rel="internal" href="/zh-TW/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes" title="Chino (tradicional)">正體中文 (繁體) (zh-TW)</a></bdi></li>
+                
+              
+
+              
+            </ul>
+          </div>
+        </div>
+      </li>
+      
+      <li class="page-buttons-edit"><a href="/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Usando_las_cajas_flexibles_CSS$edit" class="button neutral" data-optimizely-hook="button-edit-doc" id="edit-button" rel="nofollow, noindex">Editar<i aria-hidden="true" class="icon-pencil"></i></a></li>
+      
+
+        
+
+        <li class="page-buttons-advanced"><button id="advanced-menu" class="only-icon" aria-haspopup="true" aria-owns="advanced-menu-submenu" aria-expanded="false"><span>Avanzado</span><i aria-hidden="true" class="icon-cog"></i></button>
+        <div class="submenu js-submenu" id="advanced-menu-submenu">
+          <!-- this page -->
+          <div class="submenu-column">
+            <div class="title">Avanzado</div>
+            <ul>
+                <li><a href="/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Usando_las_cajas_flexibles_CSS$history" rel="nofollow, noindex">Historial</a></li>
+                
+                
+                
+
+
+                
+
+                
+                
+                
+                <li class="page-print"><a href="#" onclick="return window.print();">Imprimir este artículo</a></li>
+            </ul>
+          </div>
+        </div>
+  </li></ul>
+      </div>
+
+      <div class="document-title">
+        
+
+        <h1>Usando las cajas flexibles CSS</h1>
+      </div>
+    </div>
+  </div>
+
+      <div class="center clear">
+      
+
+    <div class="wiki-main-content" id="document-main"><div class="center">
+      <!-- start the main content container -->
+        <div id="wiki-column-container" class="wiki-right-present wiki-left-present">
+
+          <!-- content row with three strips -->
+          <div class="column-container column-container-reverse">
+
+            
+              <!-- TOC, approvals, etc -->
+              <div class="column-strip wiki-column" id="wiki-right">
+              
+              <!-- table of contents -->
+              <div id="toc" class="toc toggleable">
+                <a href="#toc" class="title toggler" data-open-icon="icon-caret-right" data-closed-icon="icon-caret-down">En este artículo<i></i></a>
+                <ol class="toggle-container">
+                  <li><a href="#El_concepto_de_cajas_flexibles" rel="internal">El concepto de "cajas flexibles"</a><li><a href="#Vocabulario_de_cajas_flexibles" rel="internal">Vocabulario de "cajas flexibles"</a><li><a href="#Diseñando_una_caja_flexible" rel="internal">Diseñando una "caja flexible"</a><li><a href="#Consideraciones_de_los_elementos_flexibles" rel="internal">Consideraciones de los elementos flexibles</a><li><a href="#Propiedades_de_las_cajas_flexibles" rel="internal">Propiedades de las "cajas flexibles"</a><ol><li><a href="#Propiedades_que_no_afectan_a_las_cajas_flexibles" rel="internal">Propiedades que no afectan a las "cajas flexibles"</a></ol></li><li><a href="#Ejemplos" rel="internal">Ejemplos</a><ol><li><a href="#Ejemplo_básico_flex" rel="internal">Ejemplo básico "flex"</a><li><a href="#Ejemplo_de_Diseño_del_Santo_Gríal" rel="internal">Ejemplo de "Diseño del Santo Gríal"</a></ol></li><li><a href="#Área_de_juego" rel="internal">Área de juego</a><li><a href="#Cosas_a_tener_en_mente" rel="internal">Cosas a tener en mente</a><li><a href="#Compatibilidad_de_Navegadores" rel="internal">Compatibilidad de Navegadores</a><ol><li><a href="#Notas" rel="internal">Notas</a></ol></li><li><a href="#Ver_también" rel="internal">Ver también</a>
+                </ol>
+              </div>
+              
+              </div>
+            
+
+
+            <!-- center: main article content -->
+            <div id="wiki-content" class="column-half wiki-column text-content">
+
+              
+
+              
+              
+
+              
+
+              
+                
+              
+              
+
+              <!-- just the article content -->
+              <article id="wikiArticle">
+                
+                  
+                    
+                    <div><section class="Quick_links" id="Quick_Links"><!-- --></section></div>
+
+<p><span class="seoSummary">La propiedad <strong>Flexible Box</strong>, o <strong>flexbox</strong>, de CSS3 es un <a title="/en-US/docs/CSS/Layout_mode" href="/en-US/docs/CSS/Layout_mode">modo de diseño</a> que permite colocar los elementos de una página para que se comporten de forma predecible cuando el diseño de la página debe acomodarse a diferentes tamaños de pantalla y diferentes dispositivos. Para muchas aplicaciones, el modelo "caja flexible" produce una mejora sobre el modelo "bloque" porque no utiliza la propiedad <span style="font-family: courier new,andale mono,monospace;">float</span>, ni hace que los márgenes del contenedor flexible interfieran con los márgenes de sus contenidos.</span></p>
+
+<p>Muchos diseñadores verán que el modelo "caja flexible" es más sencillo de utilizar. Los elementos "hijos" de una "caja flexible" pueden colocarse en cualquier dirección y pueden tener dimensiones flexibles para adapterse al espacio visible. Posicionar los elementos "hijos" es por tanto mucho más sencillo, y los diseños complejos pueden hacerse más fácilmente y con código más limpio, ya que el orden de visualización de los elementos es independiente del orden que estos tengan en el código fuente. Esta independencia afecta intencionadamente únicamente a la representación visual, dejando el orden de locución y navegación a lo que diga el código fuente.</p>
+
+<div class="note"><strong>Nota:</strong> Aunque la especificación del diseño de "cajas flexibles" de CSS está en fase de "candidata a recomendación", no todos los navegadores la han implementado. La implementación de WebKit requiere el prefijo <code>-webkit</code>; Internet Explorer implementa una versión antigua de la especificación, con prefijo; Opera 12.10 implementa la última versión, sin prefijo. Revisa la tabla de compatibilidad de cada propiedad para saber cuál es el estado actual de compatibilidad.</div>
+
+<h2 id="El_concepto_de_cajas_flexibles">El concepto de "cajas flexibles"</h2>
+
+<p>Lo que caracteriza un diseño flexible es su habilidad para alterar el ancho y alto de sus elementos para ajustarse lo mejor posible al espacio disponible en cualquier dispositivo. Un contenedor flexible expande sus elementos para rellenar el espacio libre, o los comprime para evitar que rebasen el área prevista.</p>
+
+<p>El algoritmo del modelo de diseño de "cajas flexibles" no parte de niguna dirección predeterminada, al contrario de lo que ocurre con el modelo "bloque", que asume una disposición vertical de los elementos, o lo que pasa con el modelo "en línea", que asume una disposición horizontal. Mientras que el modelo "bloque" funciona bien para páginas, se queda muy corto cuando se trata de aplicaciones en las que hay que tener en cuenta el cambio de orientación del dispositivo o los cambios de tamaño realizados por los gestos del usuario. El modelo de "cajas flexibles" es más apropiado para diseños de pequeña escala, mientras que el (emergente) modelo "rejilla" es adecuado para diseños de gran escala. Ambos son parte del gran esfuerzo que el "CSS Working Group" está realizando para proveer de mayor inteorperabilidad a las aplicaciones web con todo tipo de usuarios, distintos modos de escritura, y otras necesidades de flexibilidad.</p>
+
+<h2 id="Vocabulario_de_cajas_flexibles">Vocabulario de "cajas flexibles"</h2>
+
+<p>Aunque al hablar de las "cajas flexibles" nos olvidamos de términos como "horizontal/en línea" y "vertical/bloque", se hace necesario emplear una nueva terminología. Fíjate en el siguiente diagrama para afianzar el vocabulario empleado en sus elementos. Se muestra un contenedor flexible que tiene una <code>flex-direction</code> de tipo <code>row</code>, que significa que los elementos flexibles se muestra uno a continuación del otro horizontalmente a lo largo del eje principal (main axis) de acuerdo con el modo de escritura preestablecido, y en este caso, la dirección en que el texto de los elementos fluye es de izquierda-a-derecha.</p>
+
+<p><img src="/files/3739/flex_terms.png" alt="flex_terms.png" class="default internal"></p>
+
+<dl>
+ <dt>Contenedor flexible (Flex container)</dt>
+ <dd>El elemento "padre" que contiene los elementos flexibles. Un contenedor flexible se define usando los valores <code>flex</code> o <code>inline-flex</code> en la propiedad <a title="display" href="/en/CSS/display" rel="internal"><code>display</code></a>.</dd>
+ <dt>Elemento flexible (Flex item)</dt>
+ <dd>
+ <p>Cada hijo de un contenedor flex se convierte en un elemento flexible. Si hay texto directamente incluido en el contenedor flexible, se envuelve automáticamente en un elemento flexible anónimo.</p>
+ </dd>
+ <dt>Ejes</dt>
+ <dd>
+ <p>Cada diseño de "caja flexible" sigue dos ejes. El <strong>eje principal</strong> es el eje a lo largo del cual los elementos flexibles se suceden unos a otros. El <strong>eje secundario</strong> es el eje perpendicular al <strong>eje principal</strong>.</p>
+
+ <ul>
+  <li>La propiedad <code><a title="flex-direction" href="/en/CSS/flex-direction" rel="internal">flex-direction</a></code> establece el eje principal.</li>
+  <li>La propiedad <a title="en/CSS/justify-content" href="/en/CSS/justify-content" rel="internal"><code>justify-content</code></a> define cómo los elementos flexibles se disponen a lo largo del eje principal en la línea en curso.</li>
+  <li>La propiedad <a title="en/CSS/align-items" href="/en/CSS/align-items"><code>align-items</code></a> define cómo los elementos flexibles se disponen a lo largo del eje secundario de la línea en curso.</li>
+  <li>La propiedad <a title="en/CSS/align-self" href="/en/CSS/align-self"><code>align-self</code></a> define cómo cada elemento flexible se alinea respecto al eje secundario, y sustituye al valor por defecto establecido por <code>align-items.</code></li>
+ </ul>
+ </dd>
+ <dt>Direcciones</dt>
+ <dd>
+ <p>Los lados <strong>inicio principal</strong>/<strong>fin principal (main start/main end) </strong>e <strong>inicio secundario</strong>/<strong>fin </strong><strong>secundario (cross start/cross end)</strong> del contenedor flexible describen el origen y final del flujo de los elementos flexibles. Estos siguen los eje principal y secundario según el vector establecido por <code>writing-mode</code> (izquierda-a-derecha, derecha-a-izquierda, etc.).</p>
+
+ <ul>
+  <li>La propiedad <a title="en/CSS/order" href="/en/CSS/order" rel="internal"><code>order</code></a> asigna elementos a grupos ordinales y determina qué elementos aparecen primero.</li>
+  <li>La propiedad <a title="flex-flow" href="/en/CSS/flex-flow" rel="internal"><code>flex-flow</code></a> property combina las propiedades <a title="flex-direction" href="/en/CSS/flex-direction" rel="internal"><code>flex-direction</code></a> y <a title="flex-wrap" href="/en/CSS/flex-wrap" rel="internal"><code>flex-wrap</code></a> para colocar los elementos flexibles.</li>
+ </ul>
+ </dd>
+ <dt>Líneas</dt>
+ <dd>
+ <p>Los elementos flexibles pueden disponerse en una sola o varias líneas de acuerdo con la propiedad <a title="flex-wrap" href="/en/CSS/flex-wrap" rel="internal"><code>flex-wrap</code></a>, que controla la dirección del eje secundario y la dirección en la que las nuevas líneas se apilan.</p>
+ </dd>
+ <dt>Dimensiones</dt>
+ <dd>
+ <p>Los términos equivalentes a "altura" y "anchura" usados en los elementos flexibles son <strong>tamaño principal (main size)</strong> and <strong>tamaño secundario (cross size),</strong> que respectivamente siguen al eje principal y al eje secundario del contenedor flexible.</p>
+
+ <ul>
+  <li>La propiedades <code><a title="/en/CSS/min-height" href="/en/CSS/min-height">min-height</a></code> y <code><a title="/en/CSS/min-width" href="/en/CSS/min-width">min-width</a></code> tienen un nuevo valor, <code>auto</code> que establece el tamaño mínimo de un elemento flexible.</li>
+  <li>La propiedad <a title="en/CSS/flex" href="/en/CSS/flex" rel="internal"><code>flex</code></a> combina las propiedades <code><a title="en/CSS/flex-basis" href="/en/CSS/flex-basis" rel="internal">flex-basis</a></code>, <a title="en/CSS/flex-grow" href="/en/CSS/flex-grow" rel="internal"><code>flex-grow</code></a>, y <a title="en/CSS/flex-shrink" href="/en/CSS/flex-shrink" rel="internal"><code>flex-shrink</code></a> para establecer el grado de flexibilidad de los elementos flexibles.</li>
+ </ul>
+ </dd>
+</dl>
+
+<h2 id="Diseñando_una_caja_flexible">Diseñando una "caja flexible"</h2>
+
+<p>Para indicar que unos elementos tienen este estilo CSS, asigna la propiedad <a title="/en/CSS/display" href="/en/CSS/display">display</a> así:</p>
+
+<pre class="brush: css">display : flex</pre>
+
+<p>o</p>
+
+<pre class="brush: css">display : inline-flex</pre>
+
+<p>Haciendo esto, se define el elemento como contenedor flexible y todos sus "hijos" como elementos flexibles. El valor <code>flex</code> hace que el contenedor flexible sea un bloque dentro del elemento "padre" al que pertenezca. El valor <code>inline-flex</code> hace que el contenedor flexible sea un elemento "en línea" dentro del elemento "padre" al que pertenezca.</p>
+
+<div class="note"><strong>Nota:</strong> Cuando utilices un prefijo para el tipo de navegador, ponlo en la propiedad "display" no en el atributo "display". Por ejemplo, <code>display : -webkit-flex</code>.</div>
+
+<h2 id="Consideraciones_de_los_elementos_flexibles">Consideraciones de los elementos flexibles</h2>
+
+<p>El texto que se encuentre directamente dentro de un contenedor flexible, será automáticamente envuelto en un elemento flexible anónimo. Sin embargo, si un elemento flexible contiene solamente espacios en blanco no será mostrado, como si tuviera la propiedad <code style="color: rgb(93,86,54); font-size: 14px;">display:none</code>.</p>
+
+<p>Los "hijos" de un contenedor flexible que tengan un posicionamiento absoluto, se situarán de manera que su posición estática se determine en referencia a la esquina del <strong>inicio principal (main start)</strong> de su contenedor flexible.</p>
+
+<p>Actualmente, debido a un problema conocido, asignar <code style="font-size: 14px;">visibility:collapse</code> a un elemento flexible causa que sea tratado como si fuera <code style="font-size: 14px;">display:none</code> en vez de lo que se supone que debería ocurrir, es decir, como si fuera <code style="font-size: 14px;">visibility:hidden</code>. La alternativa mientras se resuelve este problema es usar <code>visibility:hidden</code> para elementos flexibles que deban comportarse como <code>visibility:collapse</code>.</p>
+
+<p>Los márgenes de elementos flexibles adyacentes no se colapsan. Usando márgenes <code>auto</code> se absorbe el espacio extra vertical y horizontalmente y puede ser utilizado para alinear o separar elementos flexibles adyacentes. Ver <a title="http://dev.w3.org/csswg/css3-flexbox/#auto-margins" href="http://dev.w3.org/csswg/css3-flexbox/#auto-margins" class="external">Aligning with 'auto' margins</a> en la especificación "W3C Flexible Box Layout Model" para más detalles al respecto.</p>
+
+<p>Para asegurar un tamaño mínimo por defecto de los elementos flexibles, usa <code>min-width:auto</code> y/o <code>min-height:auto</code>. Para los elementos flexibles, el valor de atributo <code>auto</code> calcula la mínima anchura/altura del elemento para que no sea menor que la anchura/altura de su contenido, garantizando que el elemento es mostrado suficientemente grande como para que se vea su contenido. Ver <a title="La documentación acerca de este tema no ha sido escrita todavía . ¡Por favor  considera contribuir !" href="/es/docs/Web/CSS/min-width"><code>min-width</code></a>  y <a title="La propiedad min-height se utiliza para definir la altura mínima de un elemento dado. Impide que el valor de la propiedad height llegue a ser más pequeña que la especificada en la altura mínima (min-height)." href="/es/docs/Web/CSS/min-height"><code>min-height</code></a> para más detalles al respecto.</p>
+
+<p>Las propiedades de alineación de "cajas flexibles" realizan un "verdadero" centrado en CSS. Esto significa que los elementos flexibles permanecerán centrados, incluso si estos rebasan su contenedor flexible. Esto puede llegar a ser un problema, ya que si sobrepasan el tope superior de la página o el izquierdo (en escritura LTR de izquierda-a-derecha) o el derecho (en escritura RTL de derecha-a-izquierda), no se puede desplazar hacia ese área, incluso habiendo contenido allí. En el futuro, las propiedades de alineación se ampliarán para que tengan una opción "safe" (seguro) para controlar esta situación. De momento, si esto te preocupa, puedes usar los márgenes para conseguir el centrado, ya que estos responderán de modo seguro parando el centrado si se sobrepasan los límites. En vez de usar las propiedades <code>align-</code>, simplemente pon márgenes automáticos en los elementos flexibles que quieras centrar. En vez de usar las propiedades <code>justify-</code>, pon márgenes automáticos en los límites exteriores del primer y último elemento flexible del contenedor flexible. Los márgenes automáticos se adaptarán asumiendo el espacio sobrante, centrando los elementos flexibles donde sobre espacio, y cambiando a alineación normal donde no sobre espacio. Sin embargo, si tratas de reemplazar <code>justify-content</code> con "centrado-basado-en-márgenes" en una "caja flexible" multi-línea, probablemente no funcionará, ya que tendrías que poner márgenes en el primer y último elemento de cada línea. A menos que puedas predecir qué elementos encajarán en cada línea, no tendrás una respuesta fiable usando el "<span style="line-height: inherit;">centrado-basado-en-márgenes</span><span style="line-height: inherit;">" en el eje principal al reemplazar la propiedad </span><code style="font-size: 14px; line-height: inherit;">justify-content</code><span style="line-height: inherit;">.</span></p>
+
+<p>Recuerda que mientras el orden en que se muestran los elementos es independiente de su orden en el código fuente, esta independecia afecta solamente a la representación visual, y no al orden de locución y navegación que seguirán el orden establecido en el código fuente. Incluso la propiedad <a title="La propiedad CSS order especifica el orden utilizado para disponer los elementos en su contenedor flexible. Los elementos estarán dispuestos en orden ascendente según el valor de order. Los elementos con el mismo valor de order se dispondrán en el orden en el cual aparecen en el código fuente." href="/es/docs/Web/CSS/order"><code>order</code></a> no afectará a la secuencia de locución ni de navegación. Así que los desarrolladores deben preocuparse del orden de los elementos adecuadamente en el código fuente para que no se deteriore la accesibilidad del documento. </p>
+
+<h2 id="Propiedades_de_las_cajas_flexibles">Propiedades de las "cajas flexibles"</h2>
+
+<h3 id="Propiedades_que_no_afectan_a_las_cajas_flexibles">Propiedades que no afectan a las "cajas flexibles"</h3>
+
+<p>Como las "cajas flexibles" emplean un algoritmo diferente, alguna propiedades no tienen sentido para un contenedor flexible.</p>
+
+<ul>
+ <li>Propiedades column-* del <a title="/en/CSS/Using_CSS_multi-column_layouts" href="/en/CSS/Using_CSS_multi-column_layouts">Módulo Multicol</a> no tienen ningún efecto en un elemento flexible.</li>
+ <li><a title="La documentación acerca de este tema no ha sido escrita todavía . ¡Por favor  considera contribuir !" href="/es/docs/Web/CSS/float"><code>float</code></a> y <a title="La propiedad CSS clear especifica si un elemento puede estar al lado de elementos flotantes que lo preceden o si debe ser movido (cleared) debajo de ellos. La propiedad clear aplica a ambos elementos flotantes y no flotantes." href="/es/docs/Web/CSS/clear"><code>clear</code></a> no tienen ningún efecto en un elemento flexible. Usar <code>float</code> causa que la propiedad <code>display</code> del elemento se comporte como <code>block</code>.</li>
+ <li><a title="La propiedad vertical-align de CSS especifica el alineado vertical de un elemento en línea o una celda de una tabla." href="/es/docs/Web/CSS/vertical-align"><code>vertical-align</code></a> no tiene efecto en la alineación de los elementos flexibles.</li>
+</ul>
+
+<h2 id="Ejemplos">Ejemplos</h2>
+
+<h3 id="Ejemplo_básico_flex">Ejemplo básico "flex"</h3>
+
+<p>Este ejemplo básico muestra como aplicar "flexibilidad" a un elemento y como sus "hijos" se comportan flexiblemente. </p>
+
+<pre class="brush:html;">​&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;style&gt;
+
+   .flex
+   {
+      /* basic styling */
+      width: 350px;
+      height: 200px;
+      border: 1px solid #555;
+      font: 14px Arial;
+
+      /* flexbox setup */
+      display: -webkit-flex;
+      -webkit-flex-direction: row;
+
+      display: flex;
+      flex-direction: row;
+   }
+
+   .flex &gt; div
+   {
+      -webkit-flex: 1 1 auto;
+      flex: 1 1 auto;
+
+      width: 30px; /* To make the transition work nicely.  (Transitions to/from
+                      "width:auto" are buggy in Gecko and Webkit, at least.
+                      See http://bugzil.la/731886 for more info.) */
+
+      -webkit-transition: width 0.7s ease-out;
+      transition: width 0.7s ease-out;
+   }
+
+   /* colors */
+   .flex &gt; div:nth-child(1){ background : #009246; }
+   .flex &gt; div:nth-child(2){ background : #F1F2F1; }
+   .flex &gt; div:nth-child(3){ background : #CE2B37; }
+
+   .flex &gt; div:hover
+   {
+        width: 200px;
+   }
+   
+   &lt;/style&gt;
+    
+ &lt;/head&gt;
+ &lt;body&gt;
+  &lt;p&gt;Flexbox nuovo&lt;/p&gt;
+  &lt;div class="flex"&gt;
+    &lt;div&gt;uno&lt;/div&gt;
+    &lt;div&gt;due&lt;/div&gt;
+    &lt;div&gt;tre&lt;/div&gt;
+  &lt;/div&gt;
+ &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<h3 id="Ejemplo_de_Diseño_del_Santo_Gríal">Ejemplo de "Diseño del Santo Gríal"</h3>
+
+<p>Este ejemplo muestra como la "caja flexible" proporciona la habilidad de cambiar dinámicamente el diseño para distintas resoluciones de pantalla. El diagrama siguiente ilustra la transformación.</p>
+
+<p><img src="/files/3760/HolyGrailLayout.png" alt="HolyGrailLayout.png" class="default internal"></p>
+
+<p>Aquí se muestra el caso en que el diseño de la página adaptado a un navegador tiene que mostrarse óptimamente en un smartphone. No solamente los elementos se reducen de tamaño, sino que el orden en que se muestran también cambia. La "caja flexible" lo hace muy sencillo.</p>
+
+<pre class="brush:html;">​
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+  &lt;head&gt;
+    &lt;style&gt;
+
+  body {
+   font: 24px Helvetica;
+   background: #999999;
+  }
+
+  #main {
+   min-height: 800px;
+   margin: 0px;
+   padding: 0px;
+   display: -webkit-flex;
+   display:         flex;
+   -webkit-flex-flow: row;
+           flex-flow: row;
+   }
+ 
+  #main &gt; article {
+   margin: 4px;
+   padding: 5px;
+   border: 1px solid #cccc33;
+   border-radius: 7pt;
+   background: #dddd88;
+   -webkit-flex: 3 1 60%;
+           flex: 3 1 60%;
+   -webkit-order: 2;
+           order: 2;
+   }
+  
+  #main &gt; nav {
+   margin: 4px;
+   padding: 5px;
+   border: 1px solid #8888bb;
+   border-radius: 7pt;
+   background: #ccccff;
+   -webkit-flex: 1 6 20%;
+           flex: 1 6 20%;
+   -webkit-order: 1;
+           order: 1;
+   }
+  
+  #main &gt; aside {
+   margin: 4px;
+   padding: 5px;
+   border: 1px solid #8888bb;
+   border-radius: 7pt;
+   background: #ccccff;
+   -webkit-flex: 1 6 20%;
+           flex: 1 6 20%;
+   -webkit-order: 3;
+           order: 3;
+   }
+ 
+  header, footer {
+   display: block;
+   margin: 4px;
+   padding: 5px;
+   min-height: 100px;
+   border: 1px solid #eebb55;
+   border-radius: 7pt;
+   background: #ffeebb;
+   }
+ 
+  /* Too narrow to support three columns */
+  @media all and (max-width: 640px) {
+  
+   #main, #page {
+    -webkit-flex-flow: column;
+            flex-flow: column;
+   }
+
+   #main &gt; article, #main &gt; nav, #main &gt; aside {
+    /* Return them to document order */
+    -webkit-order: 0;
+            order: 0;
+   }
+  
+   #main &gt; nav, #main &gt; aside, header, footer {
+    min-height: 50px;
+    max-height: 50px;
+   }
+  }
+
+ &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+ &lt;header&gt;header&lt;/header&gt;
+ &lt;div id='main'&gt;
+    &lt;article&gt;article&lt;/article&gt;
+    &lt;nav&gt;nav&lt;/nav&gt;
+    &lt;aside&gt;aside&lt;/aside&gt;
+ &lt;/div&gt;
+ &lt;footer&gt;footer&lt;/footer&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<h2 id="Área_de_juego">Área de juego</h2>
+
+<p>Hay varias áreas de juego de "cajas flexibles" disponibles on-line para experimentar:</p>
+
+<ul>
+ <li><a title="http://demo.agektmr.com/flexbox/" href="http://demo.agektmr.com/flexbox/" class="external">Flexbox Playground</a></li>
+ <li><a title="http://the-echoplex.net/flexyboxes" href="http://the-echoplex.net/flexyboxes" class="external">Flexy Boxes</a></li>
+</ul>
+
+<h2 id="Cosas_a_tener_en_mente">Cosas a tener en mente</h2>
+
+<p>El algoritmo de las "cajas flexibles" puede ser un poco complejo de entender a veces. Hay una serie de cosas a considerar para evitar "sorpresas" cuando se utilizan las "cajas flexibles".</p>
+
+<p>Las "cajas flexibles" se comportan en función del <a title="https://developer.mozilla.org/en-US/docs/CSS/writing-mode" href="https://developer.mozilla.org/en-US/docs/CSS/writing-mode">modo de escritura</a> establecido. Esto siginifica que <strong>inicio principal</strong> (<strong>main start</strong>) y <strong>fin principal</strong> (<strong>main end</strong>) se disponen de según la posición de <strong>inicio</strong> (<strong>start</strong>) y <strong>fin</strong> (<strong>end</strong>).</p>
+
+<p><strong>inicio secundario (cross start)</strong> y <strong>fin secundario</strong> (<strong>cross end)</strong> confían en la definición de la posición <strong>inicio</strong> (<strong>start)</strong> o <strong>antes</strong> (<strong>before)</strong> que depende del valor de <a title="direction" href="/en/CSS/direction"><code>direction</code></a>.</p>
+
+<p>Los saltos de página son posibles en el diseño de "cajas flexibles" siempre que la propiedad <code>break-</code> lo permita. Las propiedades CSS3 <code>break-after</code>, <code>break-before</code> y <code>break-inside</code> así como las propiedades CSS 2.1 <code>page-break-before</code>, <code>page-break-after</code> y <code>page-break-inside</code> se aceptan en los contenedores flexibles, también en los elementos flexibles que ellos contienen, y también en los elementos que esos elementos flexibles a su vez contienen.</p>
+
+<h2 id="Compatibilidad_de_Navegadores">Compatibilidad de Navegadores</h2>
+
+<p></p><div class="htab">
+    <a name="AutoCompatibilityTable" id="AutoCompatibilityTable"></a>
+    <ul>
+        <li class="selected"><a>Desktop</a></li>
+        <li><a>Mobile</a></li>
+    </ul>
+</div><p></p>
+
+<div id="compat-desktop">
+<table class="compat-table">
+ <tbody>
+  <tr>
+   <th>Caraterística</th>
+   <th>Firefox (Gecko)</th>
+   <th>Chrome</th>
+   <th>Internet Explorer</th>
+   <th>Opera</th>
+   <th>Safari</th>
+  </tr>
+  <tr>
+   <td>Soporte Básico</td>
+   <td><a title="Released on 2013-01-08." href="/en-US/Firefox/Releases/18">18.0</a> (18.0)<span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with '-moz' as this browser considers it experimental" href="/es/docs/Web/Guide/Prefixes" class="new">-moz</a></span>(Behind a pref) [2]<br>
+    <a title="Released on 2013-06-25." href="/en-US/Firefox/Releases/22">22.0</a> (22.0)</td>
+   <td>21.0<span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with '-webkit' as this browser considers it experimental" href="/es/docs/Web/Guide/Prefixes" class="new">-webkit</a></span></td>
+   <td>10<span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with '-ms' as this browser considers it experimental" href="/es/docs/Web/Guide/Prefixes" class="new">-ms</a></span>(partial)</td>
+   <td>12.1</td>
+   <td>3.1<span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with '-webkit' as this browser considers it experimental" href="/es/docs/Web/Guide/Prefixes" class="new">-webkit</a></span>(partial)<br>
+    6.1<span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with '-webkit' as this browser considers it experimental" href="/es/docs/Web/Guide/Prefixes" class="new">-webkit</a></span><br>
+    9</td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<div id="compat-mobile">
+<table class="compat-table">
+ <tbody>
+  <tr>
+   <th>Caraterística</th>
+   <th>Firefox Mobile (Gecko)</th>
+   <th>Android</th>
+   <th>IE Phone</th>
+   <th>Opera Mobile</th>
+   <th>Safari Mobile</th>
+  </tr>
+  <tr>
+   <td>Soporte Básico</td>
+   <td>18.0 (18.0)<span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with '-moz' as this browser considers it experimental" href="/es/docs/Web/Guide/Prefixes" class="new">-moz</a></span>(Behind a pref) [2]<br>
+    22.0 (22.0)</td>
+   <td><span title="Compatibility unknown; please update this." style="color: rgb(255, 153, 0);">?</span></td>
+   <td>10<span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with '-ms' as this browser considers it experimental" href="/es/docs/Web/Guide/Prefixes" class="new">-ms</a></span>(partial)<br>
+    11</td>
+   <td>12.1</td>
+   <td>
+    <p>3.2<span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with '-webkit' as this browser considers it experimental" href="/es/docs/Web/Guide/Prefixes" class="new">-webkit</a></span>(partial)<br>
+     7.1<span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with '-webkit' as this browser considers it experimental" href="/es/docs/Web/Guide/Prefixes" class="new">-webkit</a></span><br>
+     9.0</p>
+   </td>
+  </tr>
+ </tbody>
+</table>
+</div>
+
+<h3 id="Notas">Notas</h3>
+
+<p>[1] Internet Explorer 10 y Safari soportan un antiguo borrador de la especificación que es incompatible. No han sido actualizados para soportar la versión final.</p>
+
+<p>[2] Firefox soporta solamente la "caja flexible" con una sola línea. Para activar el soporte de "caja flexible" el usuario tiene que cambiar la preferencia about:config "layout.css.flexbox.enabled" a <code>true</code>.</p>
+
+<p>[3] El navegador de Android hasta la versión 4.3 soporta un borrador antiguo e incompatible de la especificación. Android 4.4 ha sido actualizado para dar soporte a la versión final.</p>
+
+<p>[4] Mientras que en la implementación inicial en Opera 12.10 <code>flexbox </code>no estaba en el prefijo, obtuvo prefijos en las versiones de la 15 a la 16 de Opera y 15 a 19 de Opera Mobile con <span title="prefix" class="inlineIndicator prefixBox prefixBoxInline"><a title="The name of this feature is prefixed with '-webkit' as this browser considers it experimental" href="/es/docs/Web/Guide/Prefixes" class="new">-webkit</a></span>. Este prefijo, fue eliminado de nuevo en Opera 17 y Opera Mobile 24.</p>
+
+<p>[5] Hasta Firefox 29, especificar <code>visibility: collapse</code> en un elemento flex causaba que fuera tratado como si fuera <code>display: none </code>en vez del comportamiento pretendido, tratándolo como si fuera <code>visibility: hidden</code>. El método alternativo sugerido es usar <code>visibility: hidden</code> para los elementos flex que debieran comportarse como si huberan sido designados <code>visibility: collapse</code>. Para más información, ver <a title='FIXED: implement "visibility: collapse" behavior on flexbox' href="https://bugzilla.mozilla.org/show_bug.cgi?id=783470" class="external">bug 783470</a>.</p>
+
+<h2 id="Ver_también">Ver también</h2>
+
+<ul>
+ <li><a href="https://github.com/philipwalton/flexbugs" class="external">El Proyecto Flexbugs</a> para información de errores en implementación de flexbox en navegadores.</li>
+</ul>
+                  
+                
+
+              
+                <aside class="helpful-survey hidden" id="helpful-survey">
+                  <p>¿Te resultó útil este artículo?</p>
+
+                  <div class="helpful-survey-content">
+                    <div class="helpful-survey-buttons">
+                      <button type="button" class="helpful-survey-vote helpful-survey-yes">
+                        <span class="offscreen">Sí</span>
+                        <i class="icon-thumbs-o-up" aria-hidden="true"></i>
+                      </button>
+                      <button type="button" class="helpful-survey-vote helpful-survey-no">
+                        <span class="offscreen">No</span>
+                        <i class="icon-thumbs-o-down" aria-hidden="true"></i>
+                      </button>
+                    </div>
+
+                    <div class="helpful-survey-thankyou">¡Gracias!</div>
+                  </div>
+                </aside>
+              
+              </article>
+
+              <!-- contributors -->
+              <div class="wiki-block contributors">
+                <h2 class="offscreen">Etiquetas y colaboradores del documento</h2>
+                
+                
+
+                
+                  <div class="contributors-sub">
+                    <i aria-hidden="true" class="icon-group icon-fw"></i>&nbsp;<strong>Colaboradores en esta página:</strong> 
+        <a href="/es/profiles/Tonylu11">Tonylu11</a>, 
+    
+        <a href="/es/profiles/javier_junin">javier_junin</a>, 
+    
+        <a href="/es/profiles/AlePerez92">AlePerez92</a>, 
+    
+        <a href="/es/profiles/MMariscal">MMariscal</a>, 
+    
+        <a href="/es/profiles/fscholz">fscholz</a>, 
+    
+        <a href="/es/profiles/ArcangelZith">ArcangelZith</a>, 
+    
+        <a href="/es/profiles/FNK">FNK</a>, 
+    
+        <a href="/es/profiles/rippe2hl">rippe2hl</a>, 
+    
+        <a href="/es/profiles/StripTM">StripTM</a>, 
+    
+        <a href="/es/profiles/joan.leon">joan.leon</a>, 
+    
+        <a href="/es/profiles/arturo_sanz">arturo_sanz</a>
+    
+                  </div>
+                
+
+                
+                  <div class="contributors-sub">
+                    <i aria-hidden="true" class="icon-clock-o icon-fw"></i>&nbsp;<strong>Última actualización por:</strong>
+                    <a href="/es/profiles/Tonylu11">Tonylu11</a>,
+                    <time datetime="2016-12-29T04:50:58.107563-08:00">29 dic. 2016 4:50:58</time>
+                  </div>
+                
+              </div>
+            </div>
+
+            
+              <!-- quick links and zone subnav strip -->
+              <div id="wiki-left" class="column-strip wiki-column">
+
+                
+
+                
+                  <!-- quick links -->
+                  
+  <div class="quick-links" id="quick-links">
+    <div class="title see-also">Ver también</div>
+    <ol><li><strong><a href="/es/docs/Web/CSS">CSS</a></strong></li><li><strong><a href="/es/docs/Web/CSS/Reference">Referencia CSS</a></strong></li><li><strong><a href="/es/docs/Web/CSS/CSS_Flexible_Box_Layout">CSS Flexible Box Layout</a></strong></li><li data-default-state="open"><a href="#"><strong>Guías</strong></a><ol><li><a title="The defining aspect of the flexbox is the ability to alter its items, width, and/or height to best fill the available space on any display device. A flex container expands its items to fill the available free space or shrinks them to prevent overflow." href="/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Advanced_layouts_with_flexbox">Advanced layouts with flexbox</a> <a title="Nuestros voluntarios aún no han traducido este artículo al Español. ¡Únete a nosotros y ayuda a traducirlo!" style="opacity: 0.5;" href="/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Advanced_layouts_with_flexbox$translate">[Traducir]</a></li><li><a title='La propiedad Flexible Box, o flexbox, de CSS3 es un modo de diseño que permite colocar los elementos de una página para que se comporten de forma predecible cuando el diseño de la página debe acomodarse a diferentes tamaños de pantalla y diferentes dispositivos. Para muchas aplicaciones, el modelo "caja flexible" produce una mejora sobre el modelo "bloque" porque no utiliza la propiedad float, ni hace que los márgenes del contenedor flexible interfieran con los márgenes de sus contenidos.' href="/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Usando_las_cajas_flexibles_CSS">Usando las cajas flexibles CSS</a></li><li><a title="Usar flexbox puede ayudarte a diseñar atractivas composiciones en aplicaciones web que escalen mejor de escritorio a móvil. Pon fin a los elementos flotantes &lt;div>, el posicionamiento absoluto, y los hacks de JavaScript, y comienza a construir composiciones fluidas en horizontal y vertical en apenas unas líneas de CSS. Algunos ejemplos básicos de casos de uso:" href="/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Usando_flexbox_para_componer_aplicaciones_web">Usando flexbox para componer aplicaciones web</a></li></ol></li><li data-default-state="open"><a href="#"><strong>Propiedades</strong></a><ol><li><a title="La propiedad CSS align-content ajusta las líneas dentro de un contenedor flex cuando hay espacio extra en el eje transversal." href="/es/docs/Web/CSS/align-content"><code>align-content</code></a></li><li><a title="La propiedad CSS align-items alinea los elementos de la línea flexible actual de la misma forma que justify-content, pero en dirección perpendicular." href="/es/docs/Web/CSS/align-items"><code>align-items</code></a></li><li><a title="La propiedad CSS align-self alinea los elementos flexibles de la línea flexible actual, reemplazando el valor de align-items. Si el límite transversal de alguno de los elementos está definido como auto, el valor de align-self es ignorado." href="/es/docs/Web/CSS/align-self"><code>align-self</code></a></li><li><a title="" href="/es/docs/Web/CSS/flex"><code>flex</code></a></li><li><a title="La propiedad de CSS flex-basis especifíca la base flexible, la cual es el tamaño inicial de un elemento flexible. Ésta propiedad determina el tamaño de una caja de contenidos a no ser que se haya especificado de otra forma usando box-sizing." href="/es/docs/Web/CSS/flex-basis"><code>flex-basis</code></a></li><li><a title="La propiedad CSS flex-direction especifica cómo colocar los objetos flexibles en el contenedor flexible definiendo el eje principal y la dirección (normal o invertida)." href="/es/docs/Web/CSS/flex-direction"><code>flex-direction</code></a></li><li><a title="La propiedad CSS flex-flow  es una prpoiedad taquinográfica para las propiedades individuales flex-direction y flex-wrap." href="/es/docs/Web/CSS/flex-flow"><code>flex-flow</code></a></li><li><a title="La propiedad flex-grow de CSS especifica el factor de crecimiento de un elemento flexible. Se especifica qué cantidad de espacio debe ocupar el elemento dentro del contenedor flexible." href="/es/docs/Web/CSS/flex-grow"><code>flex-grow</code></a></li><li><a title="The flex-shrink CSS property specifies the flex shrink factor of a flex item. Flex items will shrink to fill the container according to the flex-shrink number when the default width of flex items is widerthan flex container." href="/es/docs/Web/CSS/flex-shrink"><code>flex-shrink</code></a> <a title="Nuestros voluntarios aún no han traducido este artículo al Español. ¡Únete a nosotros y ayuda a traducirlo!" style="opacity: 0.5;" href="/es/docs/Web/CSS/flex-shrink$translate">[Traducir]</a></li><li><a title='La propiedad flex-wrap de CSS  especifica si los elementos "hijos" son obligados a permanecer en una misma línea o pueden fluir en varias líneas. Si la cobertura (wrap) está permitida, esta propiedad también te permite controlar la dirección en la cual serán apilados los elementos.' href="/es/docs/Web/CSS/flex-wrap"><code>flex-wrap</code></a></li><li><a title="La propiedad CSS justify-content define cómo el navegador distribuye el espacio entre y alrededor de los items flex, a lo largo del eje principal de su contenedor." href="/es/docs/Web/CSS/justify-content"><code>justify-content</code></a></li><li><a title="La propiedad CSS order especifica el orden utilizado para disponer los elementos en su contenedor flexible. Los elementos estarán dispuestos en orden ascendente según el valor de order. Los elementos con el mismo valor de order se dispondrán en el orden en el cual aparecen en el código fuente." href="/es/docs/Web/CSS/order"><code>order</code></a></li></ol></li></ol>
+  </div>
+                
+
+                <!-- approvals -->
+                
+
+              </div>
+            
+          </div>
+        </div>
+      </div>
+    </div> <!-- ends "main-content" -->
+
+    
+      <div class="newsletter-box">
+      <div class="newsletter">
+    <form id="newsletterForm" class="newsletter-form nodisable" name="newsletter-form" action="https://www.mozilla.org/en-US/newsletter/" method="post">
+        <div class="newsletter-head">
+            <h2 class="newsletter-teaser">Aprender lo mejor del desarrollo web</h2>
+            <p class="newsletter-description">Obtén lo mejor y más reciente de MDN directamente en tu bandeja de entrada.</p>
+            
+            <p class="newsletter-lang">Por ahora, el boletín solo está disponible en inglés.</p>
+            
+        </div>
+
+        <div class="newsletter-fields">
+            <input type="hidden" id="fmt" name="fmt" value="H">
+            <input type="hidden" id="newsletterNewslettersInput" name="newsletters" value="app-dev" />
+            <div id="newsletterErrors" class="newsletter-errors"></div>
+
+            <div id="newsletterEmail" class="form-group newsletter-group-email">
+                <label for="newsletterEmailInput" class="form-label offscreen">Correo electrónico</label>
+                <input type="email" id="newsletterEmailInput" name="email" class="form-input newsletter-input-email" required placeholder="you@example.com" size="30">
+            </div>
+
+            <div id="newsletterPrivacy" class="form-group form-group-agree newsletter-group-privacy hidden">
+                <input type="checkbox" id="newsletterPrivacyInput" name="privacy" required>
+                <label for="newsletterPrivacyInput">
+                Estoy de acuerdo con que Mozilla administre mis datos según la <a href="https://www.mozilla.org/privacy/"> Política de privacidad</a>.
+                </label>
+            </div>
+            <div id="newsletterSubmit" class="newsletter-group-submit">
+                <button id="newsletter-submit" type="submit" class="button neutral newsletter-submit">Suscribirse</button>
+            </div>
+        </div>
+    </form>
+    <div id="newsletterThanks" class="newsletter-thanks hidden">
+        <h2>¡Gracias! Comprueba tu correo para confirmar la subscripción.</h2>
+        <p>Si no has confirmado nunca una subscripción a boletines relacionados con Mozilla, tendrás que hacerlo. Comprueba tu correo o carpeta de spam para ver si recibiste un correo nuestro.
+        </p>
+    </div>
+    <button id="newsletterHide" type="button" class="only-icon newsletter-hide hidden"><span>Ocultar registro al boletín</span><i aria-hidden="true" class="icon-times"></i></button>
+</div>
+      </div>
+    
+
+  <menu type="context" id="edit-history-menu">
+    <menuitem data-action="/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Usando_las_cajas_flexibles_CSS$edit" label="Editar página"></menuitem>
+    <menuitem data-action="/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Usando_las_cajas_flexibles_CSS$history" label="Ver historial de la página"></menuitem>
+  </menu>
+
+      </div>
+  </main>
+  <!-- Footer -->
+    <footer id="nav-footer" class="nav-footer">
+      <div class="center">
+          <a href="/es/" class="nav-footer-logo">Documentación web de MDN</a>
+          <div class="footer-group footer-group-mdn">
+            <h2 class="footer-title">MDN</h2>
+            <ul class="footer-list">
+              <li><a href="/es/docs/Web">Tecnologías web</a></li>
+              <li><a href="/es/docs/Learn">Aprender Desarrollo web</a></li>
+              <li><a href="/docs/MDN/About">Acerca de MDN</a></li>
+              <li><a href="/es/docs/MDN/Feedback">Comentarios</a></li>
+              <li class="footer-social"><a href="https://twitter.com/mozdevnet" class="only-icon"><i aria-hidden="true" class="icon-twitter"></i> <span>Twitter</span></a></li>
+              <li class="footer-social"><a href="https://github.com/mdn/" class="only-icon"><i aria-hidden="true" class="icon-github"></i> <span>GitHub</span></a></li>
+            </ul>
+          </div>
+
+          <a href="https://mozilla.org" class="nav-footer-mozilla">Mozilla</a>
+          <div class="footer-group footer-group-mozilla">
+            <h2 class="footer-title">Mozilla</h2>
+            <ul class="footer-list">
+              <li><a href="https://www.mozilla.org/about/">Acerca de</a></li>
+              <li><a href="https://www.mozilla.org/contact/">Contáctanos</a></li>
+              <li><a href="https://donate.mozilla.org/?utm_source=developer.mozilla.org&utm_medium=referral&utm_content=footer">Donar</a></li>
+              <li><a href="https://www.mozilla.org/firefox/?utm_source=developer.mozilla.org&utm_campaign=footer&utm_medium=referral">Firefox</a></li>
+              <li class="footer-social"><a href="https://twitter.com/mozilla" class="only-icon"><i aria-hidden="true" class="icon-twitter"></i> <span>Twitter</span></a></li>
+              <li class="footer-social"><a href="https://www.facebook.com/mozilla" class="only-icon"><i aria-hidden="true" class="icon-facebook"></i> <span>Facebook</span></a></li>
+              <li class="footer-social"><a href="https://www.instagram.com/mozillagram/" class="only-icon"><i aria-hidden="true" class="icon-instagram"></i> <span>Instagram</span></a></li>
+            </ul>
+          </div>
+
+          
+            
+  
+    <form class="languages go" method="get" action="/es/docs/Web">
+      <label for="language">Otros idiomas:</label>
+      <select id="language" class="wiki-l10n" name="next" dir="ltr">
+        <option title="Español" value="/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Usando_las_cajas_flexibles_CSS" selected>
+          Español (es)
+        </option>
+        
+          <option title="Inglés (EE.UU.)" value="/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes">
+            English (US) (en-US)
+          </option>
+          <option title="Bengalí (Bangladesh)" value="/bn-BD/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes">
+            বাংলা (বাংলাদেশ) (bn-BD)
+          </option>
+          <option title="Catalán" value="/ca/docs/Web/CSS/CSS_Flexible_Box_Layout/Utilitzar_model_flexible_caixes_CSS">
+            Català (ca)
+          </option>
+          <option title="Alemán" value="/de/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes">
+            Deutsch (de)
+          </option>
+          <option title="Francés" value="/fr/docs/Web/CSS/Disposition_flexbox_CSS/Utilisation_des_flexbox_en_CSS">
+            Français (fr)
+          </option>
+          <option title="Italiano" value="/it/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes">
+            Italiano (it)
+          </option>
+          <option title="Japonés" value="/ja/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes">
+            日本語 (ja)
+          </option>
+          <option title="Coreano" value="/ko/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes">
+            한국어 (ko)
+          </option>
+          <option title="Portugués (Brasil)" value="/pt-BR/docs/CSS/Usando_caixas_flexiveis_css">
+            Português (do Brasil) (pt-BR)
+          </option>
+          <option title="Ruso" value="/ru/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes">
+            Русский (ru)
+          </option>
+          <option title="Ucraniano" value="/uk/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes">
+            Українська (uk)
+          </option>
+          <option title="Chino (simplificado)" value="/zh-CN/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes">
+            中文 (简体) (zh-CN)
+          </option>
+          <option title="Chino (tradicional)" value="/zh-TW/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes">
+            正體中文 (繁體) (zh-TW)
+          </option>
+      </select>
+      <noscript><button type="submit">Ir</button></noscript>
+    </form>
+  
+
+          
+
+          
+            <ul class="footer-tos">
+              <li><a href="https://www.mozilla.org/about/legal/terms/mozilla">Condiciones</a></li>
+              <li><a href="https://www.mozilla.org/privacy/websites/">Privacidad</a></li>
+              <li><a href="https://www.mozilla.org/privacy/websites/#cookies">Cookies</a></li>
+            </ul>
+
+            <div class="contentinfo">
+              <p>&copy; 2005-2017 Mozilla y colaboradores individuales.</p> <p>El contenido está disponible bajo <a href="/en-US/docs/MDN/About#Copyrights_and_licenses">estas licencias</a>.</p>
+            </div>
+          
+      </div>
+    </footer> 
+
+  <!-- site js -->
+  
+    
+    <!--[if lte IE 8]><script type="text/javascript" src="https://cdn.mdn.mozilla.net/static/build/js/selectivizr.091e18cf669b.js" charset="utf-8"></script><![endif]-->
+
+    
+    <script type="text/javascript" src="https://cdn.mdn.mozilla.net/static/jsi18n/es/javascript.cc1eaf9300c5.js"></script>
+    <script type="text/javascript" src="https://cdn.mdn.mozilla.net/static/build/js/main.3e386b35787d.js" charset="utf-8"></script>
+    
+      <script>
+        if(window.mdn && mdn.analytics) mdn.analytics.trackOutboundLinks();
+      </script>
+    
+    
+
+  
+
+    
+        <script async type="text/javascript" src="https://cdn.mdn.mozilla.net/static/build/js/wiki-skinny.479f62dbbd0b.js" charset="utf-8"></script>
+    
+
+
+
+  
+
+  
+    <script type="text/javascript">
+        (function($) {
+            $('#wikiArticle').children('h2[id]').each(function() {
+                var id = $(this).attr('id');
+                var href = '/es/docs/Web/CSS/CSS_Flexible_Box_Layout/Usando_las_cajas_flexibles_CSS$edit#' + id;
+
+                $('<a>').attr({
+                    href: href,
+                    'class': 'button section-edit only-icon',
+                    'rel': 'nofollow, noindex'
+                })
+                .append($('<i aria-hidden="true" class="icon-pencil"></i>'))
+                .append($('<span>'))
+                .find('span')
+                .text(gettext('Edit'))
+                .end()
+                .on('click', function(e) {
+                    e.preventDefault();
+
+                    mdn.analytics.trackEvent({
+                        category: 'Section Edit',
+                        action: id
+                    }, function() {
+                        window.location = href;
+                    });
+                })
+                .appendTo(this);
+            });
+        })(jQuery);
+    </script>
+  
+
+  
+
+  
+    <script async type="text/javascript" src="https://cdn.mdn.mozilla.net/static/build/js/newsletter.7cd3274169f2.js" charset="utf-8"></script>
+  
+
+
+</body>
+</html>
